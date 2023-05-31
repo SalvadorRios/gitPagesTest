@@ -1,0 +1,10 @@
+<p>ejemplo1 works!</p>
+
+<select [(ngModel)]="selectedOption">
+  <option value="">Selecciona una opción</option>
+  <option value="opcion1">Opción 1</option>
+  <option value="opcion2">Opción 2</option>
+  <option value="opcion3">Opción 3</option>
+</select>
+
+<p>Opción seleccionada: {{ selectedOption | json }}</p>

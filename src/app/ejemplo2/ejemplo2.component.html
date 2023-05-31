@@ -1,0 +1,27 @@
+<p>ejemplo2 works!</p>
+<div class="container mt-5">
+    <div class="row custom-wrapper">
+      <h2 class="mb-3 text-center">Angular Select Dropdown Examle</h2>
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <div class="d-grid">
+          <select
+            class="custom-select mb-3"
+            (change)="changeCity($event)"
+            formControlName="cityName"
+          >
+            <option value="">Choose City</option>
+            <option *ngFor="let city of City" [ngValue]="city">
+              {{ city }}
+            </option>
+          </select>
+          <!-- error block -->
+          <div class="invalid-feedback" *ngIf="isSubmitted && cityName?.invalid">
+            <sup>*</sup>Please provide city name
+          </div>
+          <button type="submit" class="btn btn-danger btn-lg btn-block">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
